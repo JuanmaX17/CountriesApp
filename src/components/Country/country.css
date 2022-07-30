@@ -1,0 +1,16 @@
+.country__card{
+    border-radius: 8px;
+}
+
+.country__cta{
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    border-bottom: 1px solid var(--Dark-Gray);
+
+}
+.country__footer{
+    text-align: end;
+    padding-bottom: 10px;
+    padding-right: 12px;
+}

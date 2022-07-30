@@ -1,0 +1,32 @@
+.search__results{
+    background-color: var(--Dark-Gray);
+    position: absolute;
+    top: 190px;
+    right: 5%;
+    left: 5%;
+}
+
+.search__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.search__item:hover {
+    background-color: var(--Blue);
+}
+
+.search__cta{
+    border: none;
+    background-color: transparent;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    justify-self: flex-end;
+}
+
+.search__cta:hover {
+    cursor: pointer;
+    border-bottom: 4px solid var(--Dark-Gray);
+}

@@ -1,0 +1,34 @@
+.box{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 54px;
+    border-radius: 8px;
+    padding: 0 28px;
+    position: relative;
+    
+}
+
+.box__search{
+    width: 90%;
+    background-color: inherit;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+}
+
+.box__icon{
+    margin-right: 26px;
+    cursor: pointer;
+}
+
+.box__icon:hover {
+    color: var(--Dark-Gray);
+}
+
+
+.center{
+    width: 100%;
+    margin: auto;
+}

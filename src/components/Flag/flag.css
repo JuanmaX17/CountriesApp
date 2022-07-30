@@ -1,0 +1,10 @@
+.flag{
+    width: 100%;
+
+}
+
+.flag__img{
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}

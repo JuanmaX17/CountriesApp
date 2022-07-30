@@ -1,0 +1,44 @@
+.nav{
+    background-color: var(--Menu-Bg);
+    height: 92px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+}
+
+.nav__title{
+    font-size: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav__theme{
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+}
+
+.nav__icon{
+    transition: color, transform  0.9s;
+}
+
+.nav__theme:hover > .nav__mode{
+    border-bottom: 1px solid var(--Dark-Gray);
+}
+
+.nav__theme:hover .nav__icon-soon{
+    color: var(--Color-Icon);
+    transform: rotate(-180deg) scale(1.1);
+}
+
+.nav__theme:hover .nav__icon-moon {
+    transform: scale(1.4);
+}

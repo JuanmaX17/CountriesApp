@@ -1,0 +1,41 @@
+.detail{
+    width: 82%;
+    margin: 40px auto 0 auto;
+}
+
+.detail__btn{
+    text-decoration: none;
+    color: inherit;
+    width: 88px;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 46px;
+}
+
+.detail__info{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    line-height: 2;
+    margin-top: 20px;
+}
+
+.detail__p span {
+    font-weight: 600;
+}
+.detail__p {
+    font-size: 0.9rem;
+}
+
+.detail__borderCountries p {
+    font-weight: 600;
+}
+
+.detail__borders{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}

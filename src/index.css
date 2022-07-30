@@ -1,13 +1,36 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root{
+  --Theme-Color-Dark: hsl(207, 26%, 17%);
+  --Menu-Bg-Dark: hsl(209, 23%, 22%);
+  --Text-Color-Dark:hsl(0, 0%, 98%);
+  --Color-Icon-Dark: yellow;
+  --Very-Blue-Dark: hsla(209, 26%, 16%, 0.93);
+
+  --Dark-Gray: hsl(0, 0%, 52%);
+  --Blue: rgba(48, 87, 133, 0.746);
+
+  --Theme-Color-Ligth: hsl(0, 0%, 92%);
+  --Menu-Bg-Ligth: hsl(0, 0%, 98%);
+  --Text-Color-Ligth:hsl(207, 26%, 17%);
+  --Color-Icon-Ligth: hsl(209, 23%, 22%);
+  --Very-Blue-Ligth: hsla(0, 5%, 77%, 0.181);
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app{
+  min-height: 100vh;
 }
