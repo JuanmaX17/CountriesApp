@@ -1,5 +1,7 @@
 .country__card{
     border-radius: 8px;
+    position: relative;
+    max-width: 400px;
 }
 
 .country__cta{
@@ -7,10 +9,8 @@
     color: inherit;
     font-weight: 600;
     border-bottom: 1px solid var(--Dark-Gray);
+    position: absolute;
+    right: 6%;
+    bottom: 4%;
 
-}
-.country__footer{
-    text-align: end;
-    padding-bottom: 10px;
-    padding-right: 12px;
 }

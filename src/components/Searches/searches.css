@@ -9,3 +9,12 @@
 .searches > * {
     margin: auto;
 }
+
+@media (min-width: 725px) {
+    .searches{
+        flex-direction: row;
+    }
+    .searches > * {
+        margin: 0;
+    }
+}

@@ -1,41 +1,57 @@
-.detail{
-    width: 82%;
-    margin: 40px auto 0 auto;
-}
-
 .detail__btn{
     text-decoration: none;
     color: inherit;
-    width: 88px;
-    padding: 6px 12px;
+    padding: 4px 20px;
+    width: 110px;
+    text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 46px;
+    gap: 10px;
 }
 
-.detail__info{
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    line-height: 2;
-    margin-top: 20px;
+.detail{
+    padding-top: 40px;
+    width: 84%;
+    margin: auto;
+    display: grid;
+    gap: 50px 40px;
+    grid-template-areas: 
+    'btn btn'
+    'card card'
 }
 
-.detail__p span {
-    font-weight: 600;
-}
-.detail__p {
-    font-size: 0.9rem;
-}
-
-.detail__borderCountries p {
-    font-weight: 600;
+.detail__btn{
+    grid-area: btn;
 }
 
 .detail__borders{
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 30px;
+}
+.detail__border{
+    display: flex;
+    align-items: center;
+    width: auto;
+    padding: 0 20px;
+
+}
+
+.deatail__card{
+    grid-area: card;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 720px) {
+    .deatail__card{
+        flex-direction: row;
+    }
+
+    .detail__borders{
+        margin-left: 30px;
+    }
+
+    .detail{
+        gap: 60px 40px;
+    }
 }

@@ -54,7 +54,6 @@ function App() {
     countriesFilter,
 
   }));
-
   return (
     <div className="app" style={styleApp}>
       <context.Provider value={value}>

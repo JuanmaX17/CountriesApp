@@ -11,10 +11,11 @@ export function ResultsSearch({ input, toEmpty }) {
     <div className="search__results">
       {
         input.map((item) => (
-          <div className="search__item" key={item.name.common}>
-            <span>{item.name.common}</span>
-            <button className="search__cta" type="button" onClick={() => handlesetCountry([item], toEmpty)}>Ir</button>
-          </div>
+          <button key={item.name.common} className="search__cta" type="button" onClick={() => handlesetCountry([item], toEmpty)}>
+            <div className="search__item">
+              <span>{item.name.common}</span>
+            </div>
+          </button>
         ))
       }
     </div>

@@ -19,8 +19,9 @@ export function Country() {
   }
 
   useEffect(() => {
-    console.log('noneeeeee');
-    handleCountries('uni');
+    if (countries.length === 0) {
+      handleCountries('uni');
+    }
   }, []);
 
   return (
@@ -33,9 +34,7 @@ export function Country() {
           <article key={item.name.common} className="country__card" style={styleCard}>
             <Flag flagImg={item.flags.svg} />
             <CountryInfo data={item} />
-            <div className="country__footer">
-              <Link className="country__cta" to={`/detail/${item.name.official}`}>Ver</Link>
-            </div>
+            <Link className="country__cta" to={`/detail/${item.name.official}`}>Ver</Link>
           </article>
         ))
       }

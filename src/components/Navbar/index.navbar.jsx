@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 import { context } from '../../Context/index.context';
 import { stylessNav } from '../../Theme/theme';
@@ -12,7 +11,7 @@ export function Navbar() {
 
   return (
     <nav className="nav" style={styleNav}>
-      <Link className="nav__title" to="/">Where in the world</Link>
+      <a className="nav__title" href="/">Where in the world</a>
       <button className="nav__theme" onClick={optionsTheme.hadnleTheme} type="button">
         {
           theme === 'Dark'
