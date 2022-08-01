@@ -13,6 +13,7 @@
 
 .box__search{
     width: 90%;
+    height: 100%;
     background-color: inherit;
     outline: none;
     border: none;

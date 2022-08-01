@@ -10,6 +10,7 @@ import { stylessApp } from './Theme/theme';
 import { getSearch } from './servicies/index.servicies';
 import { CountryDetail } from './components/CountryDetail/index.countryDetail';
 import { Home } from './components/Home/index.home';
+import { Footer } from './components/Footer/index.footer';
 import './App.css';
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
             <Route path="/detail/:id" element={<CountryDetail />} />
           </Routes>
         </Router>
+        <Footer />
       </context.Provider>
     </div>
   );

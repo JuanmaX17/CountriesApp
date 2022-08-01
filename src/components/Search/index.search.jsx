@@ -15,7 +15,8 @@ function handleInput(element, setSearches) {
   getSearch(input).then((data) => setSearches(data.slice(0, 8)));
 }
 
-function handleSearch(element, toSearch, setSearches) {
+function handleSearch(element, toSearch, setSearches, e) {
+  e?.preventDefault();
   const elementCurrent = element.current ?? { value: element };
   toSearch(elementCurrent.value);
   elementCurrent.value = '';
@@ -36,16 +37,16 @@ export function Search() {
   const { styleBox, styleInput } = stylessSearch(theme);
   return (
     <>
-      <div className="box shadow" style={styleBox}>
+      <form className="box shadow" style={styleBox} onSubmit={(e) => handleSearch(refInput, toSearch, setSearches, e)}>
         <BsSearch className="box__icon" onClick={() => handleSearch(refInput, toSearch, setSearches)} />
         <input
           onChange={() => handleInput(refInput, setSearches)}
           ref={refInput}
           style={styleInput}
           className="box__search"
-          placeholder="Search for a country..."
+          placeholder="Search for a country in english..."
         />
-      </div>
+      </form>
       <ResultsSearch input={searches} toEmpty={() => toEmpty(refInput, setSearches)} />
     </>
   );

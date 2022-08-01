@@ -7,6 +7,8 @@
     gap: 18px;
     letter-spacing: 0.8px;
     line-height: 2;
+    width: auto;
+    align-items: center;
 }
 
 .detail__p{
@@ -30,6 +32,13 @@
     font-weight: 600;
 }
 
+.detail__p p{
+    font-size: 0.98rem;
+}
+
+.detail___borderSubTitle{
+    font-weight: 600;
+}
 
 @media (min-width: 720px) {
     .detail__info{

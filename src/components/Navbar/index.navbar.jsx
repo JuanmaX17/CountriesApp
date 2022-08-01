@@ -8,6 +8,7 @@ export function Navbar() {
   const { optionsTheme } = useContext(context);
   const { theme } = optionsTheme;
   const { styleIcon, styleNav } = stylessNav(theme);
+  const mode = theme === 'Dark' ? 'Ligth mode' : 'Dark mode';
 
   return (
     <nav className="nav" style={styleNav}>
@@ -18,7 +19,7 @@ export function Navbar() {
             ? <BsFillSunFill className="nav__icon nav__icon-soon" style={styleIcon} />
             : <BsFillMoonFill className="nav__icon nav__icon-moon" style={styleIcon} />
         }
-        <span className="nav__mode">Dark Mode</span>
+        <span className="nav__mode">{mode}</span>
       </button>
     </nav>
   );

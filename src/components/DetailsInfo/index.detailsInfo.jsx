@@ -1,21 +1,23 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { calculteDot } from '../../Math/index.math';
 import './detailsInfo.css';
 
 export function DetailsInfo({ country, borderCounties, styleLink }) {
   const currencies = Object.values(country.currencies).map((item) => item.name);
-  const languages = Object.keys(country.languages);
+  const languages = Object.values(country.languages);
+  const languagesKey = Object.keys(country.languages);
   return (
     <div className="detail__info">
       <div className="detail__p">
         <h3 className="detail__title">{country.name.common}</h3>
         <p>
           <span>Native Name: </span>
-          {country.name.nativeName[languages[0]].common}
+          {country.name.nativeName[languagesKey[0]].common}
         </p>
         <p>
           <span>Population: </span>
-          {country.population}
+          {calculteDot(country.population)}
         </p>
         <p>
           <span>Region: </span>
@@ -47,11 +49,11 @@ export function DetailsInfo({ country, borderCounties, styleLink }) {
         </p>
       </div>
       <div className="detail__borderCountries">
-        <p>Border Countries</p>
+        <p className="detail___borderSubTitle">Border Countries</p>
         <div className="detail__borders">
           {
             borderCounties.map((item) => (
-              <span key={item[0].name.common} style={styleLink} className="detail__btn detail__border">{item[0].name.common}</span>
+              <span key={item[0].name.common} style={styleLink} className="detail__btn detail__border interactive">{item[0].name.common}</span>
             ))
           }
           {

@@ -6,7 +6,9 @@
     text-align: center;
     display: flex;
     gap: 10px;
+
 }
+
 
 .detail{
     padding-top: 40px;
@@ -21,17 +23,20 @@
 
 .detail__btn{
     grid-area: btn;
+    align-items: center;
 }
 
 .detail__borders{
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 28px 16px;
 }
 .detail__border{
     display: flex;
     align-items: center;
     width: auto;
-    padding: 0 20px;
+    padding: 0 16px;
+    cursor: pointer;
 
 }
 
@@ -45,6 +50,7 @@
 @media (min-width: 720px) {
     .deatail__card{
         flex-direction: row;
+        gap: 62px;
     }
 
     .detail__borders{
@@ -53,5 +59,6 @@
 
     .detail{
         gap: 60px 40px;
+        width: 90%;
     }
 }

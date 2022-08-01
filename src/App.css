@@ -28,6 +28,16 @@
   color: #61dafb;
 }
 
+.interactive {
+  transition: background-color 0.44s;
+  cursor: pointer;
+}
+.interactive:hover {
+  background-color: rgba(30, 56, 74, 0.584) !important;
+}
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

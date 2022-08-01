@@ -20,7 +20,7 @@ export function Country() {
 
   useEffect(() => {
     if (countries.length === 0) {
-      handleCountries('uni');
+      handleCountries('un');
     }
   }, []);
 
@@ -34,7 +34,7 @@ export function Country() {
           <article key={item.name.common} className="country__card" style={styleCard}>
             <Flag flagImg={item.flags.svg} />
             <CountryInfo data={item} />
-            <Link className="country__cta" to={`/detail/${item.name.official}`}>Ver</Link>
+            <Link className="country__cta" to={`/detail/${item.name.official}`}>See</Link>
           </article>
         ))
       }

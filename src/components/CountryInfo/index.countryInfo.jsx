@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { calculteDot } from '../../Math/index.math';
 import './countryInfo.css';
 
 // eslint-disable-next-line react/prop-types
@@ -10,7 +11,7 @@ export function CountryInfo({ data }) {
       <div className="info__text">
         <p>
           <span>Population: </span>
-          {data.population}
+          {calculteDot(data.population)}
         </p>
         <p>
           <span>Region: </span>

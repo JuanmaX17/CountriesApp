@@ -18,12 +18,14 @@ export function CountryDetail() {
   useEffect(() => async () => {
     if (!country.borders) return;
     const arrPromise = country.borders.map((item) => getBordersCountry(item));
-    Promise.all(arrPromise).then((data) => setBorderCountries(data));
+    Promise.all(arrPromise).then((data) => {
+      setBorderCountries(data);
+    });
   }, []);
 
   return (
     <article className="detail">
-      <Link to="/" className="detail__btn" style={styleLink}>
+      <Link to="/" className="detail__btn interactive" style={styleLink}>
         <AiOutlineArrowLeft />
         <span>Back</span>
       </Link>

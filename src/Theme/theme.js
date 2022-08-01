@@ -49,7 +49,13 @@ export function stylessBtn(theme) {
   return {
     styleLink: {
       backgroundColor: `var(--Menu-Bg-${theme})`,
-      boxShadow: `0px 0px 4px 11px var(--Very-Blue-${theme})`,
+      boxShadow: `0px 0px 0px 6px var(--Very-Blue-${theme})`,
     },
+  };
+}
+
+export function stylessFoot(theme) {
+  return {
+    styleFooter: { backgroundColor: `var(--Menu-Bg-${theme})`, color: `var(--Text-Color-${theme})` },
   };
 }
