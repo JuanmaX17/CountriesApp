@@ -16,7 +16,7 @@ export function CountryDetail() {
   const country = stateCountries.countries.find((item) => item.name.official === params.id);
   const { styleLink } = stylessBtn(optionsTheme.theme);
 
-  useEffect(() => async () => {
+  useEffect(() => {
     if (!country.borders) {
       setLoading(false);
       return;
