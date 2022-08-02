@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { BorderCountry } from '../BorderCountry/index.borderCountry';
 import { calculteDot } from '../../Math/index.math';
 import './detailsInfo.css';
 
-export function DetailsInfo({ country, borderCounties, styleLink }) {
+export function DetailsInfo({ country, borderCounties, loading }) {
   const currencies = Object.values(country.currencies).map((item) => item.name);
   const languages = Object.values(country.languages);
   const languagesKey = Object.keys(country.languages);
@@ -48,19 +49,7 @@ export function DetailsInfo({ country, borderCounties, styleLink }) {
           {languages.join(', ')}
         </p>
       </div>
-      <div className="detail__borderCountries">
-        <p className="detail___borderSubTitle">Border Countries</p>
-        <div className="detail__borders">
-          {
-            borderCounties.map((item) => (
-              <span key={item[0].name.common} style={styleLink} className="detail__btn detail__border interactive">{item[0].name.common}</span>
-            ))
-          }
-          {
-            borderCounties.length === 0 && <span>without borders</span>
-          }
-        </div>
-      </div>
+      <BorderCountry borderCounties={borderCounties} loading={loading} />
     </div>
   );
 }

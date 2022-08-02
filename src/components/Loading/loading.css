@@ -1,0 +1,32 @@
+.father__loading{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    right: 0;
+    left: 0;
+}
+.loading{
+    border-radius: 10%;
+    background-color: rgba(61, 64, 138, 0.286);
+    height: 34px;
+    width: 34px;
+    box-shadow: 
+    -34px 0px 1px -10px,
+    34px 0px 1px -10px, 
+    0px 34px 1px -10px, 
+    0px -34px 0px -10px;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes loading {
+    to{
+        transform: rotate(0);
+    }
+    from{
+        transform: rotate(360deg);
+    }
+}
+

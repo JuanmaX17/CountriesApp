@@ -11,14 +11,19 @@ import './countryDetail.css';
 export function CountryDetail() {
   const params = useParams();
   const [borderCounties, setBorderCountries] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { stateCountries, optionsTheme } = useContext(context);
   const country = stateCountries.countries.find((item) => item.name.official === params.id);
   const { styleLink } = stylessBtn(optionsTheme.theme);
 
   useEffect(() => async () => {
-    if (!country.borders) return;
+    if (!country.borders) {
+      setLoading(false);
+      return;
+    }
     const arrPromise = country.borders.map((item) => getBordersCountry(item));
     Promise.all(arrPromise).then((data) => {
+      setLoading(false);
       setBorderCountries(data);
     });
   }, []);
@@ -31,7 +36,7 @@ export function CountryDetail() {
       </Link>
       <div className="deatail__card">
         <Flag flagImg={country.flags.svg} />
-        <DetailsInfo country={country} borderCounties={borderCounties} styleLink={styleLink} />
+        <DetailsInfo country={country} borderCounties={borderCounties} loading={loading} />
       </div>
     </article>
   );

@@ -8,11 +8,12 @@ import './search.css';
 
 function handleInput(element, setSearches) {
   const input = element.current.value;
+  if (input.length < 3 && input.length !== 0) return;
   if (input.length < 1) {
     setSearches([]);
     return;
   }
-  getSearch(input).then((data) => setSearches(data.slice(0, 8)));
+  getSearch(input).then((data) => setSearches(data.slice(0, 10)));
 }
 
 function handleSearch(element, toSearch, setSearches, e) {
@@ -35,6 +36,10 @@ export function Search() {
   const { theme } = optionsTheme;
   const { handleCountries: toSearch } = stateCountries;
   const { styleBox, styleInput } = stylessSearch(theme);
+  window.onclick = () => {
+    if (refInput?.current?.value < 3) return;
+    setSearches([]);
+  };
   return (
     <>
       <form className="box shadow" style={styleBox} onSubmit={(e) => handleSearch(refInput, toSearch, setSearches, e)}>

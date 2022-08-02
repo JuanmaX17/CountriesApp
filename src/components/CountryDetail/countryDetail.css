@@ -11,7 +11,7 @@
 
 
 .detail{
-    padding-top: 40px;
+    padding-top: 150px;
     width: 84%;
     margin: auto;
     display: grid;
@@ -30,14 +30,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 28px 16px;
-}
-.detail__border{
-    display: flex;
-    align-items: center;
-    width: auto;
-    padding: 0 16px;
-    cursor: pointer;
-
+    position: relative;
+    min-height: 20px;
+    min-width: 100px;
 }
 
 .deatail__card{
