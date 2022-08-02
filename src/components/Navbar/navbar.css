@@ -1,6 +1,6 @@
 .nav{
     background-color: var(--Menu-Bg);
-    height: 92px;
+    height: 82px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,12 +8,16 @@
     position: fixed;
     left: 0;
     right: 0;
+    z-index: 1000000;
+    box-shadow: 0px 0px 4px 8px var(--Very-Blue-Dark);
 }
+
 
 .nav__title{
     font-size: 1rem;
     text-decoration: none;
     color: inherit;
+    font-weight: bold;
 }
 
 .nav__theme{
