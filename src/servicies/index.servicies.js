@@ -1,4 +1,4 @@
-const API = 'https://restcountries.com/v3.1/';
+const API = 'https://restcountries.com/v3.1';
 
 export function getSearch(name) {
   return fetch(`${API}/name/${name}`)
@@ -10,12 +10,16 @@ export function getSearch(name) {
 }
 
 export function getCountry(name) {
+  console.log('name', name);
   return fetch(`${API}/name/${name}?fullText=true`)
     .then((res) => {
       if (res.status === 404) return [];
       return res.json();
     })
-    .then((data) => data);
+    .then((data) => {
+      console.log('llegoooo', data);
+      return data;
+    });
 }
 
 export function getBordersCountry(nameCode) {

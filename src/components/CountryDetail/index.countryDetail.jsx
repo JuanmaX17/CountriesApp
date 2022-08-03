@@ -1,43 +1,22 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
-import { Flag } from '../Flag/index.flag';
+import React, { useContext } from 'react';
 import { context } from '../../Context/index.context';
-import { stylessBtn } from '../../Theme/theme';
-import { getBordersCountry } from '../../servicies/index.servicies';
-import { DetailsInfo } from '../DetailsInfo/index.detailsInfo';
+import { useCountries } from '../../CustomHooks/useCountries';
+import { Detail } from './countryDetail';
+import { Loading } from '../Loading/index.loading';
 import './countryDetail.css';
 
 export function CountryDetail() {
-  const params = useParams();
-  const [borderCounties, setBorderCountries] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const { stateCountries, optionsTheme } = useContext(context);
-  const country = stateCountries.countries.find((item) => item.name.official === params.id);
-  const { styleLink } = stylessBtn(optionsTheme.theme);
-
-  useEffect(() => {
-    if (!country.borders) {
-      setLoading(false);
-      return;
-    }
-    const arrPromise = country.borders.map((item) => getBordersCountry(item));
-    Promise.all(arrPromise).then((data) => {
-      setLoading(false);
-      setBorderCountries(data);
-    });
-  }, []);
+  const { stateCountries, optionsTheme, handlesetCountry } = useContext(context);
+  const { countries } = stateCountries;
+  const [country, loadingRoute] = useCountries({ countries, handlesetCountry });
 
   return (
     <article className="detail">
-      <Link to="/" className="detail__btn interactive" style={styleLink}>
-        <AiOutlineArrowLeft />
-        <span>Back</span>
-      </Link>
-      <div className="deatail__card">
-        <Flag flagImg={country.flags.svg} />
-        <DetailsInfo country={country} borderCounties={borderCounties} loading={loading} />
-      </div>
+      {
+        loadingRoute
+          ? <Loading />
+          : <Detail country={country} optionsTheme={optionsTheme} />
+      }
     </article>
   );
 }
