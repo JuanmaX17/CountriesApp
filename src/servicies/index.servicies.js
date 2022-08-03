@@ -10,16 +10,12 @@ export function getSearch(name) {
 }
 
 export function getCountry(name) {
-  console.log('name', name);
   return fetch(`${API}/name/${name}?fullText=true`)
     .then((res) => {
       if (res.status === 404) return [];
       return res.json();
     })
-    .then((data) => {
-      console.log('llegoooo', data);
-      return data;
-    });
+    .then((data) => data);
 }
 
 export function getBordersCountry(nameCode) {
