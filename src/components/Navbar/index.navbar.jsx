@@ -12,7 +12,7 @@ export function Navbar() {
 
   return (
     <nav className="nav" style={styleNav}>
-      <a className="nav__title" href="/">Where in the world</a>
+      <a className="nav__title" href="/">Where in the world is</a>
       <button className="nav__theme" onClick={optionsTheme.hadnleTheme} type="button">
         {
           theme === 'Dark'
