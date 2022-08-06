@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import React, { useContext } from 'react';
 import { stylessFilter } from '../../Theme/theme';
 import { context } from '../../Context/index.context';
 import './filter.css';
 
-export function Filter() {
-  const { optionsTheme, hadnleFilter, stateCountries } = useContext(context);
+function Filter({ handleFilter }) {
+  const { optionsTheme, stateCountries } = useContext(context);
   const { theme } = optionsTheme;
   const { styleSelect } = stylessFilter(theme);
   const { backgroundColor, color } = styleSelect;
@@ -14,7 +15,7 @@ export function Filter() {
     const { countries } = stateCountries;
     const region = e.target.value;
     const newFilter = countries.filter((item) => item.region === region);
-    hadnleFilter(newFilter);
+    handleFilter(newFilter);
   }
 
   return (
@@ -32,3 +33,5 @@ export function Filter() {
     </div>
   );
 }
+
+export default React.memo(Filter);

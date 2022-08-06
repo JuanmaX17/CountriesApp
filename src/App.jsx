@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { configState } from './HandlesState/index.handlesState';
 import { Navbar } from './components/Navbar/index.navbar';
 import { context } from './Context/index.context';
@@ -16,13 +12,10 @@ import './App.css';
 function App() {
   const [theme, setTheme] = useState('Dark');
   const [countries, setCountries] = useState([]);
-  const [countriesFilter, setCountriesFilter] = useState(false);
   const { styleApp } = stylessApp(theme);
   const config = {
     countries,
     setCountries,
-    countriesFilter,
-    setCountriesFilter,
     setTheme,
     theme,
   };
@@ -31,8 +24,8 @@ function App() {
   return (
     <div className="app" style={styleApp}>
       <context.Provider value={value}>
+        <Navbar />
         <Router>
-          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/detail/:id" element={<CountryDetail />} />

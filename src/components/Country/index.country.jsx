@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Flag } from '../Flag/index.flag';
@@ -7,8 +8,8 @@ import { CountryInfo } from '../CountryInfo/index.countryInfo';
 import { stylessCountry } from '../../Theme/theme';
 import './country.css';
 
-export function Country() {
-  const { optionsTheme, stateCountries, countriesFilter } = useContext(context);
+export function Country({ countriesFilter }) {
+  const { optionsTheme, stateCountries } = useContext(context);
   const [loading, setLoading] = useState(false);
   const { theme } = optionsTheme;
   const { countries, handleCountries } = stateCountries;
@@ -16,6 +17,7 @@ export function Country() {
 
   const countriesMap = { countries };
 
+  console.log('filter', countriesFilter);
   if (countriesFilter) {
     countriesMap.countries = countriesFilter;
   }

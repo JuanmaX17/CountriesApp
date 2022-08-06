@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useContext, useRef, useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { stylessSearch } from '../../Theme/theme';
@@ -16,20 +17,22 @@ function handleInput(element, setSearches) {
   getSearch(input).then((data) => setSearches(data.slice(0, 10)));
 }
 
-function handleSearch(element, toSearch, setSearches, e) {
+function handleSearch(element, toSearch, setSearches, e, handleFilter) {
   e?.preventDefault();
   const elementCurrent = element.current ?? { value: element };
+  handleFilter(false);
   toSearch(elementCurrent.value);
   elementCurrent.value = '';
   setSearches([]);
 }
-function toEmpty(element, reset) {
+function toEmpty(element, reset, handleFilter) {
   const elementCurrent = element.current;
   elementCurrent.value = '';
+  handleFilter(false);
   reset([]);
 }
 
-export function Search() {
+function Search({ handleFilter }) {
   const refInput = useRef();
   const [searches, setSearches] = useState([]);
   const { optionsTheme, stateCountries } = useContext(context);
@@ -42,7 +45,7 @@ export function Search() {
   };
   return (
     <>
-      <form className="box shadow" style={styleBox} onSubmit={(e) => handleSearch(refInput, toSearch, setSearches, e)}>
+      <form className="box shadow" style={styleBox} onSubmit={(e) => handleSearch(refInput, toSearch, setSearches, e, handleFilter)}>
         <BsSearch className="box__icon" onClick={() => handleSearch(refInput, toSearch, setSearches)} />
         <input
           onChange={() => handleInput(refInput, setSearches)}
@@ -52,7 +55,13 @@ export function Search() {
           placeholder="Search for a country in english..."
         />
       </form>
-      <ResultsSearch input={searches} toEmpty={() => toEmpty(refInput, setSearches)} />
+      <ResultsSearch
+        input={searches}
+        toEmpty={() => toEmpty(refInput, setSearches, handleFilter)}
+
+      />
     </>
   );
 }
+
+export default React.memo(Search);

@@ -6,15 +6,14 @@ import { stylessBtn } from '../../Theme/theme';
 import { Loading } from '../Loading/index.loading';
 import './borderCountry.css';
 
-function handleBorder(navigateTo, handleCountryShow, countryBorder, hadnleFilter) {
+function handleBorder(navigateTo, handleCountryShow, countryBorder) {
   navigateTo('/');
-  hadnleFilter(false);
   handleCountryShow(countryBorder);
 }
 // eslint-disable-next-line react/prop-types
 export function BorderCountry({ borderCounties, loading }) {
   const navigateTo = useNavigate();
-  const { optionsTheme, handleCountryShow, hadnleFilter } = useContext(context);
+  const { optionsTheme, handleCountryShow } = useContext(context);
   const { styleLink } = stylessBtn(optionsTheme.theme);
   return (
     <div className="detail__borderCountries">
@@ -30,7 +29,7 @@ export function BorderCountry({ borderCounties, loading }) {
               key={item[0].name.common}
               style={styleLink}
               className="detail__btn detail__border interactive"
-              onClick={() => handleBorder(navigateTo, handleCountryShow, item, hadnleFilter)}
+              onClick={() => handleBorder(navigateTo, handleCountryShow, item)}
             >
               {item[0].name.common}
             </button>
