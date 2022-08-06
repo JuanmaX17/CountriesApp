@@ -3,9 +3,7 @@ import { getSearch } from '../servicies/index.servicies';
 export function configState(states) {
   const {
     setCountries,
-    setCountriesFilter,
     countries,
-    countriesFilter,
     setTheme,
     theme,
   } = states;
@@ -17,7 +15,6 @@ export function configState(states) {
 
   function handleCountries(input) {
     return getSearch(input).then((data) => {
-      setCountriesFilter(false);
       setCountries(data);
     });
   }
@@ -27,14 +24,10 @@ export function configState(states) {
   }
 
   function handlesetCountry(input, toEmpty) {
-    setCountriesFilter(false);
     handleCountryShow(input);
     toEmpty();
   }
 
-  function hadnleFilter(newFilter) {
-    setCountriesFilter(newFilter);
-  }
   const value = {
     optionsTheme: {
       hadnleTheme,
@@ -45,8 +38,6 @@ export function configState(states) {
       handleCountries,
     },
     handlesetCountry,
-    hadnleFilter,
-    countriesFilter,
     handleCountryShow,
 
   };
